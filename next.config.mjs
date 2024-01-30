@@ -1,4 +1,12 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    domains: [
+      "prod-files-secure.s3.us-west-2.amazonaws.com",
+      "images.unsplash.com",
+    ],
+  },
+  // ... other configurations
+};
 
 export default nextConfig;
