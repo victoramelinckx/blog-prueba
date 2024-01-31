@@ -259,7 +259,9 @@ export default async function Post({ params, searchParams }: Props) {
             )}
           </ArticleImage>
           {blocks?.map((block, index) => (
-            <div key={index}>{renderBlock(block as BlockObjectResponse)}</div>
+            <div key={`block-${index}`}>
+              {renderBlock(block as BlockObjectResponse)}
+            </div>
           ))}
         </ArticleContent>
         <Suspense fallback={<LoadingBlogSuggestions loading={false} />}>
