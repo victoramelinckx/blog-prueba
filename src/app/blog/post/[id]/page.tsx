@@ -191,6 +191,7 @@ export default async function Post({ params, searchParams }: Props) {
               <span className="text-xl pr-2">&#x2022;</span>
               {block.bulleted_list_item.rich_text.map((value, index) => (
                 <span
+                  key={`span-${index}`}
                   className={`text-transparent ${
                     value.annotations.bold && "font-bold"
                   } ${value.annotations.italic && "italic"} ${
@@ -215,6 +216,7 @@ export default async function Post({ params, searchParams }: Props) {
               </span>
               {block.numbered_list_item.rich_text.map((value, index) => (
                 <span
+                  key={`spaninn-${index}`}
                   className={`text-transparent ${
                     value.annotations.bold && "font-bold"
                   } ${value.annotations.italic && "italic"} ${
