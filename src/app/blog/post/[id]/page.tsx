@@ -20,6 +20,7 @@ import {
 } from "@/app/components/blog/BlogArticle";
 
 import { LoadingBlogSuggestions } from "@/app/components/blog/loadingArticle";
+import BlurImage from "@/app/components/blog/DynamicPlaiceholderBlur";
 
 export async function generateMetadata(
   { params, searchParams }: Props,
@@ -252,27 +253,9 @@ export default async function Post({ params, searchParams }: Props) {
           </ArticleTitle>{" "}
           <ArticleImage>
             {page.cover?.type == "file" ? (
-              <Image
-                alt="Blog Image"
-                src={page.cover.file.url}
-                width={0}
-                height={0}
-                sizes="100vw"
-                className="w-full h-auto rounded-md"
-                placeholder="blur"
-                blurDataURL="/blur.png"
-              />
+              <BlurImage src={page.cover.file.url} />
             ) : (
-              <Image
-                alt="Blog Image"
-                src={page.cover?.external.url as string}
-                width={0}
-                height={0}
-                sizes="100vw"
-                className="w-full h-auto rounded-md"
-                placeholder="blur"
-                blurDataURL="/blur.png"
-              />
+              <BlurImage src={page.cover?.external.url as string} />
             )}
           </ArticleImage>
           {blocks?.map((block, index) => (
