@@ -102,20 +102,6 @@ const ArticleImage = React.forwardRef<
 });
 ArticleImage.displayName = "ArticleImage";
 
-const BlogSuggestions = React.forwardRef<
-  HTMLParagraphElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
-  return (
-    <div
-      ref={ref}
-      className={cn("grid grid-flow-row gap-3", className)}
-      {...props}
-    />
-  );
-});
-ArticleImage.displayName = "ArticleImage";
-
 export {
   ArticleSection,
   ArticleContent,
