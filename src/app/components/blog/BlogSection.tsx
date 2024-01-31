@@ -186,7 +186,7 @@ const BlogCard = React.forwardRef<HTMLDivElement, CardProps>(
               src={image}
               fill
               priority
-              className="z-10"
+              className="z-10 object-cover"
               onLoadingComplete={() => setIsLoading(false)}
             />
           </div>
