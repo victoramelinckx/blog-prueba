@@ -162,6 +162,7 @@ interface CardProps {
 const BlogCard = React.forwardRef<HTMLDivElement, CardProps>(
   ({ children, image, link, suggestions, className, ...props }, ref) => {
     const pathname = usePathname();
+    const [isLoading, setIsLoading] = useState(true);
 
     return (
       <div
@@ -177,17 +178,16 @@ const BlogCard = React.forwardRef<HTMLDivElement, CardProps>(
             query: { data: suggestions ? JSON.stringify(suggestions) : "" },
           }}
         >
-          <div className="w-full overflow-hidden h-fit max-h-48">
+          <div
+            className={`relative w-full overflow-hidden h-48 ${isLoading ? "bg-zinc-700 animate-pulse" : ""}`}
+          >
             <Image
               alt="/blurImage.jpg"
               src={image}
-              width={0}
-              height={0}
-              sizes="100vw"
-              style={{ width: "100%", height: "auto" }} // optional
+              fill
               priority
-              placeholder="blur"
-              blurDataURL="/blur.png"
+              className="z-10"
+              onLoadingComplete={() => setIsLoading(false)}
             />
           </div>
           {children}

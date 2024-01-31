@@ -1,6 +1,5 @@
 import { getPagesByID } from "@/lib/notion";
-import { Card } from "./card";
-import { Article } from "./article";
+import { BlogCard, BlogArticle } from "@/app/components/blog/BlogSection";
 
 interface BlogSuggestionsParams {
   currentPostId: number;
@@ -25,7 +24,7 @@ const BlogSuggestions = async ({
             page.properties.ID.number != currentPostId
           ) {
             return (
-              <Card
+              <BlogCard
                 key={page.id}
                 link={"/blog/post/" + page.properties.ID.number}
                 suggestions={suggestionsIDs}
@@ -35,8 +34,7 @@ const BlogSuggestions = async ({
                     : (page.cover?.external.url as string)
                 }
               >
-                {/* @ts-expect-error */}
-                <Article
+                <BlogArticle
                   title={
                     (page.properties.Post.type == "title" &&
                       page.properties.Post.title[0].plain_text) as string
@@ -49,9 +47,10 @@ const BlogSuggestions = async ({
                   date={new Date(
                     page.properties.Date.date.start
                   ).toDateString()}
+                  // @ts-expect-error
                   link="/blog"
                 />
-              </Card>
+              </BlogCard>
             );
           }
         })}

@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+import withPlaiceholder from "@plaiceholder/next";
 const nextConfig = {
   images: {
     domains: [
@@ -9,4 +10,4 @@ const nextConfig = {
   // ... other configurations
 };
 
-export default nextConfig;
+export default withPlaiceholder(nextConfig);

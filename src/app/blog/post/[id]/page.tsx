@@ -280,7 +280,6 @@ export default async function Post({ params, searchParams }: Props) {
           ))}
         </ArticleContent>
         <Suspense fallback={<LoadingBlogSuggestions loading={false} />}>
-          {/* @ts-expect-error */}
           <BlogSuggestions
             currentPostId={parseInt(params.id)}
             suggestionsIDs={suggestionsIDs}

@@ -43,7 +43,7 @@ const LoadingEffect = React.forwardRef<
   <div
     ref={ref}
     {...props}
-    className={`oflex flex-col min-h-screen w-full lg:w-3/5 gap-3`}
+    className={`flex flex-col min-h-screen w-full lg:w-3/5 gap-3`}
   >
     <div className="grid grid-flow-row gap-1">
       <p
@@ -168,6 +168,7 @@ const LoadingBlogSuggestions = React.forwardRef<
     {...props}
   />
 ));
+LoadingBlogSuggestions.displayName = "LoadingBlogSuggestions";
 
 const SuggestionsTitle = React.forwardRef<
   HTMLHeadingElement,
@@ -185,7 +186,6 @@ const SuggestionsTitle = React.forwardRef<
     {...props}
   />
 ));
-
 SuggestionsTitle.displayName = "SuggestionsTitle";
 
 const LoadingCard = React.forwardRef<
