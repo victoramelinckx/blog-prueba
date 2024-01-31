@@ -45,6 +45,7 @@ const BlogSuggestions = async ({
                         ?.plain_text) as string
                   }
                   date={new Date(
+                    // @ts-expect-error
                     page.properties.Date.date.start
                   ).toDateString()}
                   // @ts-expect-error
