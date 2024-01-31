@@ -100,7 +100,7 @@ export default async function Post({ params, searchParams }: Props) {
           <h2>
             {block.heading_1.rich_text.map((value, index) => (
               <span
-                key={index}
+                key={`heading-1-${index}`}
                 className="z-10 text-xl font-extrabold sm:text-2xl md:text-3xl text-transparent bg-gradient-to-r from-zinc-400 to-zinc-100 bg-clip-text py-4"
               >
                 {value.plain_text}
@@ -113,7 +113,7 @@ export default async function Post({ params, searchParams }: Props) {
           <h3>
             {block.heading_2.rich_text.map((value, index) => (
               <span
-                key={index}
+                key={`heading-2-${index}`}
                 className="z-10 text-xl font-extrabold sm:text-2xl md:text-3xl text-transparent bg-gradient-to-r from-zinc-400 to-zinc-100 bg-clip-text py-4"
               >
                 {value.plain_text}
@@ -126,7 +126,7 @@ export default async function Post({ params, searchParams }: Props) {
           <h4>
             {block.heading_3.rich_text.map((value, index) => (
               <span
-                key={index}
+                key={`heading-3-${index}`}
                 className="z-10 text-lg font-extrabold sm:text-xl md:text-2xl text-transparent bg-gradient-to-r from-zinc-400 to-zinc-100 bg-clip-text py-4"
               >
                 {value.plain_text}
@@ -139,7 +139,7 @@ export default async function Post({ params, searchParams }: Props) {
           if (value.href == null) {
             return (
               <span
-                key={index}
+                key={`paragraph-${index}`}
                 className={`text-transparent ${
                   value.annotations.bold && "font-bold"
                 } ${value.annotations.italic && "italic"} ${
@@ -154,7 +154,7 @@ export default async function Post({ params, searchParams }: Props) {
           } else {
             return (
               <a
-                key={index}
+                key={`a-${index}`}
                 className={`text-transparent ${
                   value.annotations.bold && "font-bold"
                 } ${
