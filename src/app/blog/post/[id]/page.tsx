@@ -1,4 +1,4 @@
-import BlogSuggestions from "../../../components/BlogSuggestions";
+import BlogSuggestions from "../../../components/blog/BlogSuggestions";
 import { getPageMetadata, getSinglePageAndBlocks } from "@/lib/notion";
 import {
   BlockObjectResponse,
@@ -8,7 +8,6 @@ import { FaArrowLeft } from "react-icons/fa";
 import Image from "next/image";
 import { Suspense } from "react";
 import type { Metadata, ResolvingMetadata } from "next";
-import Link from "next/link";
 
 import {
   ArticleSection,
@@ -270,6 +269,7 @@ export default async function Post({ params, searchParams }: Props) {
           <BlogSuggestions
             currentPostId={parseInt(params.id)}
             suggestionsIDs={suggestionsIDs}
+            title="Up Next"
           />
         </Suspense>
       </ArticleSection>

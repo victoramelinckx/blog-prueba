@@ -4,18 +4,20 @@ import { BlogCard, BlogArticle } from "@/app/components/blog/BlogSection";
 interface BlogSuggestionsParams {
   currentPostId: number;
   suggestionsIDs: number[];
+  title: string;
 }
 
 const BlogSuggestions = async ({
   currentPostId,
   suggestionsIDs,
+  title,
 }: BlogSuggestionsParams) => {
   const suggestions = await getPagesByID(suggestionsIDs);
 
   return (
     <div className="lg:w-1/3">
       <h2 className="z-10 text-xl font-extrabold sm:text-2xl md:text-3xl text-transparent bg-gradient-to-r from-zinc-400 to-zinc-100 bg-clip-text py-4">
-        Up Next
+        {title}
       </h2>
       <ul className="grid grid-flow-row gap-6">
         {suggestions.map((page) => {
