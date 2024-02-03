@@ -91,7 +91,7 @@ export const PostList = ({
           return (
             <BlogCard
               // @ts-expect-error
-              link={"/blog/post/" + page.properties.ID.number}
+              link={"/post/" + page.properties.ID.number}
               suggestions={suggestions}
               key={page.id}
               image={

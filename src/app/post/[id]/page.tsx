@@ -1,4 +1,4 @@
-import BlogSuggestions from "../../../components/blog/BlogSuggestions";
+import BlogSuggestions from "@/app/components/blog/BlogSuggestions";
 import { getPageMetadata, getSinglePageAndBlocks } from "@/lib/notion";
 import {
   BlockObjectResponse,
