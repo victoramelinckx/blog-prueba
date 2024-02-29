@@ -1,11 +1,7 @@
 import { getPages } from "@/lib/notion";
 import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-import {
-  BlogSection,
-  BlogTitle,
-  BlogSubtitle,
-  PostList,
-} from "../components/blog/BlogSection";
+import { BlogSection, BlogTitle, BlogSubtitle } from "react-notion-blog/serverComponents"
+import { PostList } from "react-notion-blog/clientComponents"
 
 export const revalidate = 0;
 
@@ -27,14 +23,20 @@ const Blog = async () => {
         <BlogSubtitle>
           We know how important education is. Check out our most recent post!
         </BlogSubtitle>
+
         <PostList
           pages={pages.results as PageObjectResponse[]}
           suggestions={suggestions}
           ITEMS_PER_PAGE={12}
         />
-      </BlogSection>
+      </BlogSection >
     </>
   );
 };
 
 export default Blog;
+
+
+/* 
+  <P
+*/

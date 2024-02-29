@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mantine/hooks": "^7.5.0",
+    "@mantine/hooks": "^7.5.3",
     "@notionhq/client": "^2.2.14",
     "@plaiceholder/next": "^3.0.0",
     "clsx": "^2.1.0",
